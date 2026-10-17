@@ -1,0 +1,6 @@
+{
+  "configuration": "Referans",
+  "criterion": "mean validation cross entropy",
+  "test_evaluated": false,
+  "interpretation": "Exploratory validation comparison; no independent superiority claim."
+}

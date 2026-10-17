@@ -1,0 +1,24 @@
+{
+  "run_id": "20261015T102622Z_8249e810",
+  "neural_seeds": [
+    42,
+    43,
+    44
+  ],
+  "split_sizes": {
+    "train": 1257,
+    "validation": 270,
+    "test": 270
+  },
+  "student": "Reyhan Onbaşı",
+  "seed": 42,
+  "dataset": "scikit-learn Digits",
+  "dataset_size": 1797,
+  "selected_model_by_validation": "CNN (CNN-C Görüntü modeli)",
+  "selected_neural_model": "CNN-C Görüntü modeli",
+  "selected_neural_best_epoch": 28,
+  "test_was_not_used_for_selection": true,
+  "primary_metric": "Macro F1",
+  "dataset_url": "https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html",
+  "original_dataset_url": "https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits"
+}

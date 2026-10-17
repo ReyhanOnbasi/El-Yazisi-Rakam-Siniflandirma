@@ -1,0 +1,38 @@
+{
+  "configs": [
+    {
+      "name": "Referans",
+      "width": 32,
+      "dropout": 0.3,
+      "l2": 0.0001
+    },
+    {
+      "name": "Kucuk_CNN",
+      "width": 16,
+      "dropout": 0.3,
+      "l2": 0.0001
+    },
+    {
+      "name": "Guclu_duzenlilestirme",
+      "width": 32,
+      "dropout": 0.4,
+      "l2": 0.0003
+    }
+  ],
+  "seeds": [
+    101,
+    202,
+    303
+  ],
+  "max_epochs": 150,
+  "batch_size": 32,
+  "learning_rate": 0.001,
+  "early_stopping_patience": 12,
+  "lr_patience": 5,
+  "checkpoint_metric": "val_ce",
+  "configuration_selection": "lowest mean validation CE; ties: fewer parameters, then name",
+  "test_evaluated": false,
+  "planned_after_prior_test_review": true,
+  "source_sha256": "fca6f4a3139a501cf040694529117b6bc5d358be2d7e9ef946f369baac5cf4b3",
+  "split_sha256": "5b482f341527bc2f7d69b75948eb1c9feab86dc3fb014af2cbdc048c3b65ce27"
+}

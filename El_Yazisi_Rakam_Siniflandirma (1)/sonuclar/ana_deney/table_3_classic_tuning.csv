@@ -1,0 +1,6 @@
+Model,En_iyi_parametreler,CV_Macro_F1,Denenen_kombinasyon
+Logistic Regression,{'clf__C': 1},0.9642267323048788,4
+KNN,"{'clf__n_neighbors': 5, 'clf__p': 2, 'clf__weights': 'distance'}",0.9686568487001278,20
+Random Forest,"{'max_depth': 12, 'max_features': 'sqrt', 'min_samples_leaf': 1, 'n_estimators': 300}",0.9736507779082499,16
+SVM (RBF),"{'clf__C': 3, 'clf__gamma': 0.01}",0.9799860469912248,12
+Gradient Boosting,"{'l2_regularization': 0.0, 'learning_rate': 0.05, 'max_iter': 200, 'max_leaf_nodes': 15}",0.9688672392297729,16

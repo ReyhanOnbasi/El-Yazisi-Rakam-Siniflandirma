@@ -1,0 +1,2 @@
+Karsilastirma,Sinir_agi_yanlis_SVM_dogru,Sinir_agi_dogru_SVM_yanlis,McNemar_exact_p,Accuracy_farki_SVM_eksi_CNN,Accuracy_farki_bootstrap_CI_2.5,Accuracy_farki_bootstrap_CI_97.5,Macro_F1_farki_SVM_eksi_CNN,Macro_F1_farki_bootstrap_CI_2.5,Macro_F1_farki_bootstrap_CI_97.5
+SVM (RBF) - CNN (CNN-C Görüntü modeli),4,2,0.6875,0.007407407407407418,-0.011111111111111072,0.025925925925925908,0.007606809403542636,-0.009796034955791922,0.02622117381481557

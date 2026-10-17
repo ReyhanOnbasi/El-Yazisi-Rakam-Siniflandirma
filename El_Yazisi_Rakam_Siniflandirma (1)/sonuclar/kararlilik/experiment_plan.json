@@ -1,0 +1,21 @@
+{
+  "seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
+  "epochs_max": 250,
+  "batch_size": 32,
+  "architecture": "CNN-C",
+  "dropout": 0.3,
+  "l2": 0.0001,
+  "learning_rate": 0.001,
+  "source_sha256": "92d5b534a68fb1ddea8246b5e53d77241bde6d5e4d00581b5d572b9a3ccab4dc",
+  "split_sha256": "5b482f341527bc2f7d69b75948eb1c9feab86dc3fb014af2cbdc048c3b65ce27",
+  "planned_after_original_test_review": true,
+  "archived_reference_model_sha256": "1200e34063802f68a5b93a37fe91ffe824c688a4571bf005241200cbb857ce09",
+  "selection_rule": "Each run: minimum validation loss. No test-based run selection.",
+  "scope": "Training randomness conditional on one fixed split; not independent test replications."
+}

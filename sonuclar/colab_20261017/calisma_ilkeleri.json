@@ -1,0 +1,27 @@
+{
+  "run_id": "20261017T160921Z",
+  "data_split_seed": 42,
+  "main_neural_seeds": {
+    "MLP-A Kompakt": 42,
+    "MLP-B Geniş": 43,
+    "CNN-C Görüntü modeli": 44
+  },
+  "stability_seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
+  "extra_validation_seeds": [
+    101,
+    202,
+    303
+  ],
+  "same_split_for_all_sections": true,
+  "test_not_used_to_select_primary_model": true,
+  "stability_seed_selection_by_test": false,
+  "extra_validation_uses_test": false,
+  "previous_mac_outputs_modified": false,
+  "github_modified": false
+}

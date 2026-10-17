@@ -1,0 +1,20 @@
+{
+  "seeds": [
+    101,
+    202,
+    303,
+    404,
+    505
+  ],
+  "architecture": "CNN-C (33002 parameters)",
+  "data_split": "Same stratified train/val/test as main; seed=42",
+  "max_epochs": 250,
+  "batch_size": 32,
+  "dropout": 0.3,
+  "l2": 0.0001,
+  "learning_rate": 0.001,
+  "checkpoint": "minimum validation loss",
+  "early_stopping_patience": 18,
+  "reduce_lr_patience": 7,
+  "test_policy": "evaluate only after all five trainings; no seed selection"
+}

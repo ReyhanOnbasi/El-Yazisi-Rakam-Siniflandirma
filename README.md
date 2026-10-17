@@ -1,58 +1,47 @@
-# El Yazısı Rakamlarının Sınıflandırılması
+# El Yazısı Rakamlarının Sınıflandırılması — YSA F26
 
-**PDF raporları:** [Rapor 1](raporlar/Rapor_1_Ogrenme_ve_Deney_Analizi.pdf) · [Rapor 2](raporlar/Rapor_2_Akademik_Makale.pdf)
+**Ders projesi:** Yapay Sinir Ağları F26  
+**Öğrenci:** Reyhan Onbaşı | **No:** 202612696008  
+**Kaynak:** scikit-learn Digits, 1.797 adet 8 × 8 rakam görüntüsü
 
-Bu depo, scikit-learn Digits veri kümesindeki 0–9 rakamlarını farklı sınıflandırıcılarla karşılaştıran Yapay Sinir Ağları F26 dönem ödevinin kodlarını, raporlarını ve kayıtlı sonuçlarını içerir.
+**Raporlar:** [Rapor 1 (PDF)](raporlar/Rapor_1_Ogrenme_ve_Deney_Analizi.pdf) · [Rapor 2 (PDF)](raporlar/Rapor_2_Akademik_Makale.pdf)
 
-**Öğrenci:** Reyhan Onbaşı  
-**Öğrenci numarası:** 202612696008  
-**Veri kümesi:** scikit-learn Digits (1.797 örnek, 8×8 piksel, 10 sınıf)
+## Son Colab çalışma kaydı
 
-## Kapsam
+Güncel deneyler, 17 Ekim 2026 tarihli **tek Google Colab oturumunda** gerçekleştirilmiştir (`20261017T160921Z`).
 
-Beş klasik algoritma ailesi (lojistik regresyon, KNN, Random Forest, RBF-SVM, Gradient Boosting) ve MLP-A, MLP-B, CNN-C ağ yapılandırmaları karşılaştırılmıştır. Eğitim/doğrulama/test ayrımı 1.257/270/270 örnektir. Klasik modellerde çapraz doğrulama ve eğitim üzerinde fit edilen ön işleme kullanılır. Model seçimi doğrulama makro F1 üzerinden yapılmıştır.
+- [Çıktılı Colab notebook'u](notebooks/202612696008_Reyhan_Onbasi_YSA_F26_Tum_Deneyler.ipynb)
+- [Ana deney performansları](sonuclar/colab_20261017/ana_deney/table_6_final_performance.csv)
+- [CNN-C beş başlangıç denemesi](sonuclar/colab_20261017/kararlilik/all_five_runs.csv)
+- [Ek doğrulama](sonuclar/colab_20261017/ek_dogrulama/validation_summary.csv)
+- [Ortam sürümleri](sonuclar/colab_20261017/environment.json)
 
-## Ana deney sonuçları
+**Veri bölünmesi:** eğitim 1.257, doğrulama 270, test 270. Ön işleme sırasında öğrenilen istatistikler yalnızca eğitim bölünmesi içinde öğrenilmiştir. Ana model, test kümesine bakılmadan doğrulama **makro F1** ile seçilmiştir.
 
-| Model | Doğrulama doğruluğu | Test doğruluğu | Test makro F1 |
+| Algoritma | Doğrulama doğruluğu | Test doğruluğu | Test makro F1 |
 | --- | ---: | ---: | ---: |
-| CNN-C | %99,26 | %98,15 | 0,98124 |
-| Logistic Regression | %97,78 | %98,52 | 0,98516 |
+| CNN-C (doğrulama ile seçilen) | %99,26 | %98,15 | 0,98124 |
 | SVM (RBF) | %97,41 | %98,89 | 0,98885 |
-| Random Forest | %96,67 | %97,41 | 0,97379 |
+| Logistic Regression | %97,78 | %98,52 | 0,98516 |
 | KNN | %96,30 | %98,15 | 0,98146 |
+| Random Forest | %96,67 | %97,41 | 0,97379 |
 | Gradient Boosting | %95,19 | %96,30 | 0,96271 |
 
-CNN-C doğrulama makro F1 ile seçilmiştir. Testte daha yüksek sonuç veren SVM, model seçimini geriye dönük değiştirmek için kullanılmamıştır. Kesin McNemar testi (p=0,6875) bu testte istatistiksel üstünlük için yeterli kanıt göstermemiştir.
+CNN-SVM eşleştirilmiş **kesin McNemar p=0,6875**: istatistiksel üstünlük kanıtı yeterli değildir. CNN-C'nin 101, 202, 303, 404, 505 tohumlarıyla elde edilen **beş koşuluk ortalama test doğruluğu %98,74 (örnek s.s. 1,13 yüzde puan)**. Kararlılık ve ek yapılandırma denemeleri aynı test gözlemlerini tekrar kullanmıştır; yeni ve bağımsız bir dış test olarak yorumlanmaz.
 
-## Depo yapısı
+## Depo düzeni
 
-- `notebooks/Digits_Model_Karsilastirmasi.ipynb`: klasik sınıflandırıcılar ile MLP ve CNN modellerinin karşılaştırılması.
-- `notebooks/CNN_Kararlilik_Analizi.ipynb`: CNN modelinin beş farklı rastgele başlangıçla kararlılık analizi.
-- `notebooks/CNN_Mimari_Karsilastirmasi.ipynb`: CNN mimarisi ve düzenlileştirme ayarlarının karşılaştırılması.
-- `raporlar/`: iki raporun PDF ve DOCX kopyaları.
-- `sekiller/`: raporlarda kullanılan yüksek çözünürlüklü şekiller.
-- `sonuclar/ana_deney/`: kaydedilmiş ana deney metrikleri ve çalışma özeti.
-- `sonuclar/kararlilik/`: beş tohumlu deneyin özetleri.
-- `sonuclar/ek_dogrulama/`: üç yapılandırma × üç tohum ek analizinin doğrulama ölçütleri.
+- `notebooks/`: son çıktı alınmış birleşik Colab notebook'u; eski deney defterleri geçmiş çalışma sürümleri olarak korunabilir.
+- `raporlar/`: son Colab sonuçlarıyla eşleşen iki raporun DOCX/PDF dosyaları.
+- `sekiller/`: son Colab sonuçlarıyla güncellenmiş 600 dpi grafikler.
+- `sonuclar/colab_20261017/`: CSV/JSON özetleri, eğitim planı ve sürümler.
+- `sonuclar/ana_deney/`, `sonuclar/kararlilik/`, `sonuclar/ek_dogrulama/`: depoda daha önce bulunan *eski deney kayıtları*; tarihleri korunmalıdır.
 
-## Çalıştırma
+Büyük boyutlu model ağırlıkları, tüm tahmin olasılıkları ve ham eğitim geçmişleri MS Teams teslimine eklenen **`YSA_F26_Tum_Deneyler_Colab_20261017T160921Z.zip`** içinde arşivlenmiştir; ikili model dosyaları GitHub'a eklenmeyerek depodaki boyut sınırlanmıştır.
 
-Google Colab'da `notebooks/Digits_Model_Karsilastirmasi.ipynb` dosyasını açıp hücreleri yukarıdan aşağı çalıştırabilirsiniz. Orijinal deneyde kullanılan paket sürümleri `requirements.txt` ve `sonuclar/ana_deney/environment.json` içinde kaydedilmiştir. TensorFlow, Python ve donanım farkları nedeniyle yeni çalıştırmanın bazı ölçütleri kayıtlı deneyden farklı olabilir. Yeni çalıştırma, `sonuclar/ana_deney/` dizinindeki geçmiş kaydı otomatik olarak değiştirmez.
+## Veri, üretilebilirlik ve kullanım notları
 
-Ek analizler, ana deneyde model seçiminin yerine geçmez; aynı veri ayrımı üzerinde sonradan yürütülen keşifsel değerlendirmelerdir.
-
-## Veri erişimi
-
-- scikit-learn: https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html
-- Özgün UCI koleksiyonu: https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits
-
-Veri kümesi `sklearn.datasets.load_digits()` ile yerel olarak yüklenir; ayrı bir veri dosyasına ihtiyaç yoktur.
-
-## Yöntem, kaynaklar ve yapay zekâ kullanımı
-
-Akademik kaynaklar, yöntem açıklamaları, sınırlılıklar ve kullanım beyanı `raporlar/` dizinindeki raporlarda bulunur. Kod düzenleme ve kontrol süreçlerinde üretken yapay zekâ desteği kullanılmıştır; deney sonuçlarının kaynağı kaydedilen çalışma dosyalarıdır. Kaynakça ve son rapor sürümleri teslim öncesinde ayrıca doğrulanmalıdır.
-
-## Not
-
-Depoda kodlar, raporlar ve deneylerin sayısal sonuçları yer almaktadır. Eğitilmiş model ağırlıkları ve büyük boyutlu ikili dosyalar depoya eklenmemiştir.
+- Veri erişim bağlantısı: https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html
+- UCI özgün koleksiyonu: https://archive.ics.uci.edu/dataset/80/optical+recognition+of+handwritten+digits
+- Kod, Google Colab'a yüklenerek hücre sırasıyla çalıştırılabilir; versiyon ve donanım farkları yeni eğitimlerde sonuçları değiştirebilir.
+- Üretken yapay zekâ kod gözden geçirme, hata giderme ve metin düzenleme süreçlerinde kullanılmıştır; sayısal değerler kaydedilen gerçek eğitim çıktılarından gelmektedir. Akademik sorumluluk ve kaynak kullanımı öğrencidedir.
